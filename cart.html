@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="js/cart.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">BASTE BOOKMART</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="uniforms.html">Uniforms</a></li>
+                <li><a href="supplies.html">Supplies</a></li>
+                <li><a class="active" href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Items will be inserted dynamically -->
+            </tbody>
+        </table>
+        <h2 id="cart-total">Total: ₱0.00</h2>
+        <div class="cart-buttons">
+            <button id="clear-cart">Clear Cart</button>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <h2>Order Summary</h2>
+        <div id="order-summary"></div>
+        <div class="payment-method">
+            <h3>Select Payment Method:</h3>
+            <label>
+                <input type="radio" name="payment" value="counter" checked>
+                Pay at the Counter
+            </label>
+            <label>
+                <input type="radio" name="payment" value="online">
+                Pay Online
+            </label>
+            
+            <!-- New online payment options section -->
+            <div id="online-payment-options" style="display: none;">
+                <h4>Online Payment Options</h4>
+                <div class="payment-option">
+                    <h5>GCash</h5>
+                    <p><strong>Account Name:</strong> BASTE BOOKMART</p>
+                    <p><strong>GCash Number:</strong> 0912-345-6789</p>
+                    <p><strong>QR Code:</strong> <button class="view-qr" data-type="gcash">View QR Code</button></p>
+                </div>
+                <hr>
+                <div class="payment-option">
+                    <h5>Bank Transfer</h5>
+                    <p><strong>Bank:</strong> Bank of the Philippine Islands (BPI)</p>
+                    <p><strong>Account Name:</strong> BASTE BOOKMART INC.</p>
+                    <p><strong>Account Number:</strong> 1234-5678-9012</p>
+                </div>
+                <hr>
+                <div class="payment-option">
+                    <h5>PayMaya</h5>
+                    <p><strong>Account Name:</strong> BASTE BOOKMART</p>
+                    <p><strong>PayMaya ID:</strong> @basteBookmart</p>
+                    <p><strong>QR Code:</strong> <button class="view-qr" data-type="paymaya">View QR Code</button></p>
+                </div>
+                <div class="payment-instructions">
+                    <p><strong>Important:</strong> After making your payment, please take a screenshot of the payment confirmation and show it upon pickup of your order.</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-buttons">
+            <button id="confirm-order">Confirm Order</button>
+            <button id="cancel-checkout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- QR Code Modal -->
+<div id="qr-modal" class="modal">
+    <div class="qr-modal-content">
+        <span class="close-qr">&times;</span>
+        <h3 id="qr-title">Payment QR Code</h3>
+        <div id="qr-container">
+            <!-- QR code will be inserted here -->
+        </div>
+        <p id="qr-instructions">Scan this QR code with your payment app to complete the transaction.</p>
+    </div>
+</div>
+
+    <!-- Receipt Modal -->
+    <div id="receipt-modal" class="modal">
+        <div class="modal-content">
+            <h2>Purchase Receipt</h2>
+            <div id="receipt-content"></div>
+            <p class="receipt-note">Please take a screenshot of this receipt and present it at the bookstore to claim your items.</p>
+            <button id="close-receipt">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>BASTE BOOKMART COPYRIGHT &copy; 2025. ALL RIGHTS RESERVED</p>
+    </footer>
+    
+</body>
+</html>

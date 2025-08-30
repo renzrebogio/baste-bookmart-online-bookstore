@@ -1,0 +1,415 @@
+/* General Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  /* Background image setup */
+  background-image: url('/img/banner1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* Sticky footer setup */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b71c1c; /* Red */
+  padding: 15px 30px;
+  color: gold;
+}
+
+header a {
+  color: gold;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav a.active {
+  border-bottom: 2px solid gold;
+}
+
+/* Main content area */
+main {
+  flex: 1; /* This makes the main content expand to push footer down */
+}
+
+/* Cart Container */
+.cart-container {
+  flex: 1;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 60px; /* Space between content and footer */
+}
+
+/* Cart Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background: #b22222;
+  color: gold;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Adjusting item column */
+td.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Item Image */
+td.item img {
+  max-width: 80px; /* Adjust image size */
+  height: auto;
+  margin-bottom: 8px; /* Space between image and name */
+  border-radius: 5px;
+}
+
+/* Item Name */
+td.item .item-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Quantity Input */
+td input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Buttons */
+button {
+  background: #b22222;
+  color: gold;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: darkred;
+}
+
+/* Clear Cart Button */
+#clear-cart {
+  background: #b22222;
+}
+
+#clear-cart:hover {
+  background: darkred;
+}
+
+/* Cart Total */
+#cart-total {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Cart Table Container - Add a wrapper for the table */
+.table-wrapper {
+  max-height: 400px; /* Adjust this value based on your needs */
+  overflow-y: auto;
+  margin-bottom: 20px;
+  /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #b22222 #fff8f0;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #fff8f0;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #b22222;
+  border-radius: 4px;
+}
+
+/* Make the table header sticky */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #b22222;
+  z-index: 1;
+}
+
+/* Modal styling updates */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto; /* Changed from 15% to 5% to give more space */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh; /* Maximum height of 80% of viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Order summary scrollable content */
+#order-summary {
+  overflow-y: auto;
+  max-height: 50vh; /* Adjust based on your needs */
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+/* Updated styles to fix sizing issues */
+
+/* Modal Content */
+.modal-content {
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Online Payment Options */
+#online-payment-options {
+  width: auto;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+#online-payment-options h4 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.payment-option {
+  margin-bottom: 15px;
+}
+
+.payment-option h5 {
+  margin-bottom: 5px;
+  color: #1a73e8;
+}
+
+.payment-option p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.payment-instructions {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+.payment-instructions p {
+  color: #d32f2f;
+  font-size: 14px;
+}
+
+/* Button styles */
+.view-qr {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.view-qr:hover {
+  background-color: #45a049;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* QR Code Modal */
+#qr-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000; /* Higher than checkout modal */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.qr-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+#qr-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#qr-container img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+}
+
+.close-qr {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-qr:hover,
+.close-qr:focus {
+  color: black;
+  text-decoration: none;
+}
+
+#qr-title {
+  margin-top: 10px;
+}
+
+#qr-instructions {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Receipt modal specific styles */
+#receipt-modal .modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#receipt-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px 0;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.receipt-note {
+  color: #d32f2f;
+}
+
+
+/* Footer */
+footer {
+  background: #b22222;
+  color: gold;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  margin-top: auto; /* This pushes the footer to the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  td.item img {
+    max-width: 60px; /* Adjust for smaller screens */
+  }
+
+  td.item .item-name {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

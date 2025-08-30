@@ -1,0 +1,12 @@
+* This project only consists of frontend.
+* Uses HTML, CSS, and JavaScript ONLY. 
+* Customized design aligned with the campus color theme, design, and products.
+* No backend, local storage was used for data storing.
+* Demonstration purposes only. Showcases the design rather than deep functionality.
+
+
+// Future Enhancements
+Create a backend
+* Use database instead of local storage
+* Payment transaction functionality
+* Admin panel

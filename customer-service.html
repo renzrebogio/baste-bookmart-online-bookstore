@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service - Baste BookMart</title>
+</head>
+
+<style>
+    /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-image: url('/img/banner1.jpg'); /* Add your background image path here */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Semi-transparent overlay */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 248, 240, 0.85); /* Semi-transparent light background */
+  z-index: -1;
+}
+
+/* Header Styling */
+header {
+  background-color: #b71c1c;
+  color: gold;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Back Button - Fixed Styling */
+.back-button {
+  position: absolute;
+  left: 2rem;
+  display: inline-block;
+  background-color: gold;
+  color: #b71c1c;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.back-button:hover {
+  background-color: #ffcc00;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Navigation */
+nav {
+  background-color: #d32f2f;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: gold;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* Section Styling */
+.grid-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* Set a minimum height to ensure equal heights */
+  min-height: 350px;
+}
+
+section h2 {
+  color: #b71c1c;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid gold;
+  font-size: 1.8rem;
+}
+
+/* FAQ Details/Summary Styling */
+details {
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+summary {
+  padding: 1rem;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  outline: none;
+}
+
+summary:hover {
+  background-color: #f0f0f0;
+}
+
+details p {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  background-color: white;
+}
+
+/* Section content styling */
+section p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Footer */
+footer {
+  background-color: #b71c1c;
+  color: gold;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0.5rem 0;
+  }
+  
+  .header-content {
+    flex-direction: column;
+  }
+  
+  .back-button {
+    position: static;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Smooth Scrolling for Anchor Links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Active Link Indicator */
+nav a.active,
+nav a:focus {
+  background-color: rgba(255, 215, 0, 0.3);
+  color: gold;
+}
+
+/* Details Animation */
+details[open] summary {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #eee;
+}
+
+details[open] p {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>Customer Service</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#returns">Returns</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+        </ul>
+    </nav>
+    
+    <div class="grid-container">
+        <section id="faqs" class="grid-item">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How can I place an order?</summary>
+                <p>Browse our catalog, add items to your cart, and proceed to checkout.</p>
+            </details>
+            <details>
+                <summary>What payment methods do you accept?</summary>
+                <p>We accept credit/debit cards, GCash, and bank transfers.</p>
+            </details>
+            <details>
+                <summary>Can I track my order status?</summary>
+                <p>You can track your order by navigating to the "Transaction History" in the profile section.</p>
+            </details>
+        </section>
+        
+        <section id="returns" class="grid-item">
+            <h2>Return Policy</h2>
+            <p>If you receive a defective or incorrect item, contact us within 7 days for a replacement or refund.</p>
+            <p>To initiate a return, please email us at returns@bastebookmart.com with your order number and photos of the item.</p>
+            <p>Return shipping costs may be covered depending on the nature of the return.</p>
+        </section>
+        
+        <section id="privacy" class="grid-item">
+            <h2>Privacy Policy</h2>
+            <p>We respect your privacy and ensure that your data is securely stored and never shared without consent.</p>
+            <p>We collect only essential information needed to process your orders and improve your shopping experience.</p>
+            <p>You can request access to your data or its deletion by contacting our support team.</p>
+        </section>
+        
+        <section id="terms" class="grid-item">
+            <h2>Terms & Conditions</h2>
+            <p>By using our website, you agree to abide by our terms of service. Unauthorized use of content is prohibited.</p>
+            <p>All products displayed on our website are subject to availability.</p>
+            <p>We reserve the right to modify these terms at any time without prior notice.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Baste BookMart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

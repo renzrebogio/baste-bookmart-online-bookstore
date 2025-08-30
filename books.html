@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/books.css">
+    <script src="/js/books.js" defer></script>
+    <script src="/js/cart.js"></script>
+
+</head>
+<body>
+
+    <header class="header">
+        <a class="logo" href="index.html">BASTE BOOKMART</a>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html" class="active">Books</a></li>
+                <li><a href="uniforms.html">Uniforms</a></li>
+                <li><a href="supplies.html">Supplies</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <section class="hero-banner">
+        <h1>Find Your Next Textbook</h1>
+        <p>Explore our collection of textbooks for College and Senior High School</p>
+      </section>
+
+      <section class="filter-sort-section">
+        <div class="filters">
+          <label for="filter">Filter by:</label>
+          <select id="filter">
+            <option value="all">All Textbooks</option>
+            <option value="college">College Textbooks</option>
+            <option value="shs">Senior High School Textbooks</option>
+          </select>
+        </div>
+        <div class="sort">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="most-stock">Most Stock</option>
+            <option value="least-stock">Least Stock</option>
+          </select>
+        </div>
+      </section>
+        
+    
+
+        <section class="products-grid">
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="21">
+                <img src="img/book21stlit.png" alt="Understanding The Self">
+                <h2>21st Century Philippine and World Literature</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">21</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="67">
+                <img src="img/bookbascal.jpg" alt="Understanding The Self">
+                <h2>Basic Calculus</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">67</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="1" data-category="college" data-date="2022-02-10" data-stock="256">
+                <img src="img/bookdiffcalc.jpg" alt="Differential Calculus">
+                <h2>Differential Calculus</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">256</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="0">
+                <img src="img/bookdiscmath.jpg" alt="General Physics 1">
+                <h2>Discrete Mathematics</h2>
+                <p>₱500.00</p>
+                <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="304">
+                <img src="img/bookethics.jpg" alt="Fundamentals of Chemistry">
+                <h2>Ethics</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">304</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="832">
+                <img src="img/bookgenbio.jpg" alt="Understanding The Self">
+                <h2>General Biology</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">832</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="0">
+                <img src="img/bookgenchem.jpg" alt="Understanding The Self">
+                <h2>General Chemistry</h2>
+                <p>₱500.00</p>
+                <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="231">
+                <img src="img/bookgenmath.jpg" alt="Understanding The Self">
+                <h2>General Mathematics</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">231</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="416">
+                <img src="img/bookgenphys.jpg" alt="Understanding The Self">
+                <h2>General Physics</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">416</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="168">
+                <img src="img/bookkpwp.jpg" alt="Understanding The Self">
+                <h2>Komunikasyon at Pananaliksik sa Wika</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">168</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="239">
+                <img src="/img/booklifeworkrizal.jpg" alt="Life and Works of Rizal">
+                <h2>Life and Works of Rizal</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">239</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="127">
+                <img src="img/bookmathmod.jpg" alt="Mathematics in the Modern World">
+                <h2>Mathematics in the Modern World</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">127</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="421">
+                <img src="img/booknstp1.jpg" alt="Mathematics in the Modern World">
+                <h2>NSTP 1</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">421</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="262">
+                <img src="img/booknstp2.jpg" alt="Mathematics in the Modern World">
+                <h2>NSTP 2</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">262</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="222">
+                <img src="img/bookoralcom.jpg" alt="Understanding The Self">
+                <h2>Oral Communication</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">222</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="57">
+                <img src="img/bookpe1.jpg" alt="Mathematics in the Modern World">
+                <h2>Physical Education 1</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">57</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="0">
+                <img src="img/bookpe2.jpg" alt="Mathematics in the Modern World">
+                <h2>Physical Education 2</h2>
+                <p>₱500.00</p>
+                <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="195">
+                <img src="img/bookpe3.jpg" alt="Mathematics in the Modern World">
+                <h2>Physical Education 3</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">195</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="233">
+                <img src="img/bookpe4.jpg" alt="Mathematics in the Modern World">
+                <h2>Physical Education 4</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">233</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="117">
+                <img src="img/bookpracres.jpg" alt="Understanding The Self">
+                <h2>Practical Research 1</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">117</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="139">
+                <img src="img/bookpracres2.jpg" alt="Understanding The Self">
+                <h2>Practical Research 2</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">139</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="31">
+                <img src="img/bookprecal.jpg" alt="Understanding The Self">
+                <h2>Pre-Calculus</h2>
+                <p>₱600.00</p>
+                <p class="stock available">Stock: <span class="stock-count">39</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="177">
+                <img src="img/bookpurpcom.jpg" alt="Mathematics in the Modern World">
+                <h2>Purposive Communication</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">177</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="34">
+                <img src="/img/booksts.jpg" alt="Science, Technology & Society">
+                <h2>Science, Technology & Society</h2>
+                <p>₱500.00</p>
+                <p class="stock available">Stock: <span class="stock-count">34</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="shs" data-date="2022-02-10" data-stock="0">
+                <img src="img/bookstatsnprob.jpg" alt="Understanding The Self">
+                <h2>Statistics and Probability</h2>
+                <p>₱500.00</p>
+                <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-category="college" data-date="2022-02-10" data-stock="0">
+                <img src="img/bookunderstandingself.jpg" alt="Understanding The Self">
+                <h2>Understanding The Self</h2>
+                <p>₱500.00</p>
+                <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Baste BookMart. All rights reserved.</p>
+      </footer>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #cc0000;
+            --primary-gold: #ffd700;
+            --white: #ffffff;
+            --light-red: #ff4444;
+            --light-gold: #ffe666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/img/banner1.jpg');
+            background-size: 105% 100%;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+        }
+        
+        .forgot-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 400px;
+            text-align: center;
+            border-left: 4px solid var(--primary-gold);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+        }
+        
+        .forgot-container h2 {
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .message {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .success-message {
+            color: #333;
+            font-size: 16px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .reset-btn, .back-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-red);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .reset-btn:hover, .back-btn:hover {
+            background: var(--light-red);
+        }
+        
+        .back-link {
+            margin-top: 15px;
+            display: block;
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            color: var(--light-red);
+            text-decoration: underline;
+        }
+        
+        .form-container, .success-container {
+            transition: all 0.3s ease;
+        }
+        
+        .success-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-container">
+        <div class="form-container" id="formContainer">
+            <h2>Reset Your Password</h2>
+            <p class="message">
+                To reset your password, please enter your email address in the field below. 
+                If your information matches our records, you will receive an email with instructions on how to regain access to your account.
+            </p>
+            <form id="resetForm">
+                <div class="input-group">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="reset-btn">Submit</button>
+            </form>
+            <a href="login.html" class="back-link">Back to Login</a>
+        </div>
+        
+        <div class="success-container" id="successContainer">
+            <h2>Request Submitted</h2>
+            <p class="success-message">
+                An email with instructions will be sent within 24 hours if your information matches our records, or simply go to our ICT office.
+            </p>
+            <button class="back-btn" onclick="window.location.href='login.html'">Back to Login</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("resetForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            // Hide form and show success container
+            document.getElementById("formContainer").style.display = "none";
+            document.getElementById("successContainer").style.display = "block";
+        });
+    </script>
+</body>
+</html>

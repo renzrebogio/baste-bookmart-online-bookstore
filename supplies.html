@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Supplies - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/supplies.css">
+    <script src="/js/supplies.js" defer></script>
+    <script src="js/cart.js"></script> 
+</head>
+<body>
+
+    <header>
+        <a class="logo" href="index.html">BASTE BOOKMART</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="uniforms.html">Uniforms</a></li>
+                <li><a class="active" href="supplies.html">Supplies</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-banner">
+        <h1>School Supplies</h1>
+        <p>Find everything you need for school and beyond!</p>
+    </section>
+
+    <section class="filter-sort-section">
+        <div class="filters">
+          <label for="filter">Filter by:</label>
+          <select id="filter">
+            <option value="all">All Supplies</option>
+            <option value="note-taking">Note-Taking</option>
+            <option value="organizing">Organizing</option>
+            <option value="fixedit">Fix & Edit</option>
+        </select>
+        </div>
+
+        <div class="sort">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+            <option value="az">Sort by: A-Z</option>
+            <option value="za">Sort by: Z-A</option>
+            <option value="most-stock">Most Stock</option>
+            <option value="least-stock">Least Stock</option>
+        </select>
+        </div>
+    </section>
+
+    <section class="products-grid">
+        <div class="product" data-category="note-taking" data-stock="1124">
+            <img src="/img/supplies1.jpg" alt="Notebook">
+            <h2>Notebook</h2>
+            <p class="price">₱50.00</p>
+            <p class="stock available">Stock: <span class="stock-count">1124</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="note-taking" data-stock="5342">
+            <img src="/img/supplies2.jpg" alt="Pen">
+            <h2>Pen</h2>
+            <p class="price">₱15.00</p>
+            <p class="stock available">Stock: <span class="stock-count">5342</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="fixedit" data-stock="0">
+            <img src="/img/supplies3.jpg" alt="Stapler">
+            <h2>Stapler</h2>
+            <p class="price">₱120.00</p>
+            <p class="stock unavailable">Stock: <span class="stock-count">0</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="organizing" data-stock="732">
+            <img src="/img/supplies4.jpg" alt="Binder">
+            <h2>Binder</h2>
+            <p class="price">₱70.00</p>
+            <p class="stock available">Stock: <span class="stock-count">732</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="organizing" data-stock="319">
+            <img src="/img/supplies5.jpg" alt="Ruler">
+            <h2>Ruler</h2>
+            <p class="price">₱20.00</p>
+            <p class="stock available">Stock: <span class="stock-count">319</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="organizing" data-stock="712">
+            <img src="img/supplies6.jpg" alt="Folder">
+            <h2>Folder</h2>
+            <p class="price">₱12.00</p>
+            <p class="stock available">Stock: <span class="stock-count">712</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="note-taking" data-stock="561">
+            <img src="img/supplies7.jpg" alt="Highlighters">
+            <h2>Highlighters</h2>
+            <p class="price">₱60.00</p>
+            <p class="stock unavailable">Stock: <span class="stock-count">561</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="fixedit" data-stock="430">
+            <img src="img/supplies8.jpg" alt="Scissors">
+            <h2>Scissors</h2>
+            <p class="price">₱45.00</p>
+            <p class="stock available">Stock: <span class="stock-count">430</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="note-taking" data-stock="1726">
+            <img src="img/supplies9.jpg" alt="Yellow Pad">
+            <h2>Yellow Pad</h2>
+            <p class="price">₱70.00</p>
+            <p class="stock available">Stock: <span class="stock-count">1726</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="fixedit" data-stock="418">
+            <img src="img/supplies10.jpg" alt="Correction Tape">
+            <h2>Correction Tape</h2>
+            <p class="price">₱29.00</p>
+            <p class="stock unavailable">Stock: <span class="stock-count">418</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>BASTE BOOKMART COPYRIGHT &copy; 2025. ALL RIGHTS RESERVED</p>
+    </footer>
+
+    
+</body>
+</html>

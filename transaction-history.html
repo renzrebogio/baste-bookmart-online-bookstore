@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #cc0000;
+            --primary-gold: #ffd700;
+            --white: #ffffff;
+            --light-red: #ff4444;
+            --light-gold: #ffe666;
+        }
+
+        body {
+            /* Add your background image URL here */
+            background-image: url('/img/banner1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Add an overlay to improve content readability */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+            z-index: 0;
+        }
+
+        /* Ensure all content appears above the overlay */
+        .navigation-buttons,
+        .transaction-container,
+        header,
+        footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            color: gold;
+        }
+
+        .navigation-buttons {
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button, .clear-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-button {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+        }
+
+        .back-button:hover {
+            background-color: var(--light-red);
+        }
+
+        .clear-button {
+            background-color: var(--primary-gold);
+            color: black;
+            border: none;
+        }
+
+        .clear-button:hover {
+            background-color: var(--light-gold);
+        }
+
+        .transaction-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .transaction-container h1 {
+            color: var(--white);  /* Changed to white for better visibility on background */
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Added shadow for better readability */
+        }
+
+        .transaction-card {
+            background: rgba(255, 255, 255, 0.95);  /* Slightly transparent white */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* Enhanced shadow */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-gold);
+            backdrop-filter: blur(5px);  /* Adds blur effect to the background behind the card */
+        }
+
+        .transaction-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .transaction-header h3 {
+            color: var(--primary-red);
+        }
+
+        .transaction-items {
+            margin: 15px 0;
+        }
+
+        .transaction-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 15px;
+            color: var(--primary-red);
+        }
+
+        .payment-status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .status-paid {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .no-transactions {
+            text-align: center;
+            padding: 40px;
+            color: var(--white);  /* Changed to white for better visibility */
+            background: rgba(255, 255, 255, 0.1);  /* Slight white background */
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .no-transactions i {
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            color: var(--primary-gold);  /* Changed footer text to white */
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Copy your header from index.html -->
+    <header>
+        <div class="logo">BASTE BOOKMART</div>
+    </header>
+
+    <div class="navigation-buttons">
+        <button class="back-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </button>
+        <button class="clear-button" onclick="clearTransactions()">
+            <i class="fas fa-trash"></i> Clear History
+        </button>
+    </div>
+
+    <section class="transaction-container">
+        <h1>Transaction History</h1>
+        <div id="transaction-list">
+            <!-- Transactions will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Copy your footer from index.html -->
+    <footer class="footer">
+        <p>&copy; 2025 Baste BookMart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function clearTransactions() {
+            if (confirm('Are you sure you want to clear all transaction history? This action cannot be undone.')) {
+                localStorage.removeItem('transactions');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const transactionList = document.getElementById('transaction-list');
+            
+            // Get transactions from localStorage
+            const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+            
+            if (transactions.length === 0) {
+                transactionList.innerHTML = `
+                    <div class="no-transactions">
+                        <i class="fas fa-receipt fa-3x"></i>
+                        <h3>No transactions yet</h3>
+                        <p>Your purchase history will appear here</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Display transactions
+            transactions.forEach(transaction => {
+                const card = document.createElement('div');
+                card.className = 'transaction-card';
+                card.innerHTML = `
+                    <div class="transaction-header">
+                        <div>
+                            <h3>Transaction #${transaction.transactionNumber}</h3>
+                            <p>${transaction.date}</p>
+                        </div>
+                        <span class="payment-status ${transaction.paymentMethod === 'online' ? 'status-paid' : 'status-pending'}">
+                            ${transaction.paymentMethod === 'online' ? 'Paid Online' : 'To be paid at counter'}
+                        </span>
+                    </div>
+                    <div class="transaction-items">
+                        <h4>Items:</h4>
+                        <ul>
+                            ${transaction.items.map(item => `
+                                <li>${item.size ? `${item.name} (${item.size})` : item.name} x ${item.quantity} - ₱${(item.price * item.quantity).toFixed(2)}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    <div class="transaction-total">
+                        Total Amount: ₱${transaction.total.toFixed(2)}
+                    </div>
+                `;
+                transactionList.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

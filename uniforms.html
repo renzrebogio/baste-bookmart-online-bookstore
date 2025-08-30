@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniforms - Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/uniforms.css">
+    <script src="/js/uniforms.js" defer></script>
+    <script src="/js/cart.js"></script>
+</head>
+<body>
+
+    <header>
+      <a class="logo" href="index.html">BASTE BOOKMART</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="uniforms.html" class="active">Uniforms</a></li>
+            <li><a href="supplies.html">Supplies</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero-banner">
+        <h1>School Uniforms</h1>
+        <p>Find the perfect fit for every student!</p>
+      </section>
+
+      <section class="filter-sort-section">
+        <div class="filters">
+          <label for="filter">Filter by:</label>
+          <select id="filter">
+            <option value="all">All Uniforms</option>
+            <option value="typea">Type A Uniforms</option>
+            <option value="typeb">Type B Uniforms</option>
+            <option value="pe">PE Uniforms</option>
+            <option value="tshirt">T-Shirts (Bravo Baste, Cavite, NSTP, etc.)</option>
+          </select>
+        </div>
+        <div class="sort">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="most-stock">Most Stock</option>
+            <option value="least-stock">Least Stock</option>
+          </select>
+        </div>
+      </section>
+
+        <section class="products-grid">
+            
+    <div class="product" data-category="typea" data-base-price="430" data-stock="732">
+        <img src="/img/uniform1.jpg" alt="Red and Gold Type A Uniform">
+        <h2>Red and Gold Type A Uniform</h2>
+        <p class="price">₱430.00</p>
+        <div class="stock-size-container">
+          <span class="stock available">Stock: <span class="stock-count">732</span></span>
+          <select class="size-dropdown">
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XLL">XLL</option>
+          </select>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+    <div class="product" data-category="typea" data-base-price="430" data-stock="801">
+        <img src="/img/uniform2.jpg" alt="Red and Gold Type A Uniform">
+        <h2>White and Gold Type A Uniform</h2>
+        <p class="price">₱430.00</p>
+        <div class="stock-size-container">
+          <span class="stock available">Stock: <span class="stock-count">801</span></span>
+          <select class="size-dropdown">
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XLL">XLL</option>
+          </select>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+<div class="product" data-category="typeb" data-base-price="430" data-stock="352">
+    <img src="/img/uniform3.jpg" alt="Red and Gold Type A Uniform">
+    <h2>Red and White Type B Uniform</h2>
+    <p class="price">₱430.00</p>
+    <div class="stock-size-container">
+      <span class="stock available">Stock: <span class="stock-count">352</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="product" data-category="typeb" data-base-price="430" data-stock="0">
+    <img src="/img/uniform4.jpg" alt="Red and Gold Type A Uniform">
+    <h2>Red-Yellow and White Type B Uniform</h2>
+    <p class="price">₱430.00</p>
+    <div class="stock-size-container">
+      <span class="stock unavailable">Stock: <span class="stock-count">0</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="product" data-category="pe" data-base-price="255" data-stock="363">
+    <img src="/img/uniform5.jpg" alt="Red and Gold Type A Uniform">
+    <h2>PE T-Shirt</h2>
+    <p class="price">₱255.00</p>
+    <div class="stock-size-container">
+      <span class="stock available">Stock: <span class="stock-count">363</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+<div class="product" data-category="pe" data-base-price="395" data-stock="129">
+    <img src="/img/uniform6.jpg" alt="Red and Gold Type A Uniform">
+    <h2>PE Jogging Pants</h2>
+    <p class="price">₱395.00</p>
+    <div class="stock-size-container">
+      <span class="stock available">Stock: <span class="stock-count">129</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="product" data-category="tshirt" data-base-price="350" data-stock="0">
+    <img src="/img/uniform7.jpg" alt="Red and Gold Type A Uniform">
+    <h2>Green Bravo Baste T-Shirt</h2>
+    <p class="price">₱350.00</p>
+    <div class="stock-size-container">
+      <span class="stock unavailable">Stock: <span class="stock-count">0</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+<div class="product" data-category="tshirt" data-base-price="350" data-stock="371">
+    <img src="img/uniform8.jpg" alt="Red and Gold Type A Uniform">
+    <h2>Brown Baste Cavite T-Shirt</h2>
+    <p class="price">₱350.00</p>
+    <div class="stock-size-container">
+      <span class="stock available">Stock: <span class="stock-count">371</span></span>
+      <select class="size-dropdown">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XLL">XLL</option>
+      </select>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="product" data-category="tshirt" data-base-price="380" data-stock="68">
+  <img src="img/uniform9.jpg" alt="Red and Gold Type A Uniform">
+  <h2>NSTP T-Shirt</h2>
+  <p class="price">₱380.00</p>
+  <div class="stock-size-container">
+    <span class="stock available">Stock: <span class="stock-count">68</span></span>
+    <select class="size-dropdown">
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XLL">XLL</option>
+    </select>
+</div>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+            
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Baste BookMart. All rights reserved.</p>
+      </footer>
+
+</body>
+</html>
