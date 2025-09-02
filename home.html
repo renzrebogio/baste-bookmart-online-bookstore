@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baste BookMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Additional styles for search functionality */
+        .search-results {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            color: black;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 4px 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .search-bar {
+            position: relative;
+        }
+        
+        .search-results.active {
+            display: block;
+        }
+        
+        .result-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        
+        .result-item:hover {
+            background-color: gold;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .category {
+            color: #666;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        
+        .no-results {
+            padding: 10px 15px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="/img/school-logo.png" alt="School Logo">
+            <h1>Baste BookMart</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for books, uniforms, or supplies...">
+            <button id="searchButton">Search</button>
+            <div id="searchResults" class="search-results">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html" class="active">
+                        <i class="fa-solid fa-home"></i><br>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="books.html">
+                        <i class="fa-solid fa-book"></i><br>
+                        Books
+                    </a>
+                </li>
+                <li>
+                    <a href="uniforms.html">
+                        <i class="fa-solid fa-shirt"></i><br>
+                        Uniforms
+                    </a>
+                </li>
+                <li>
+                    <a href="supplies.html">
+                        <i class="fa-solid fa-pencil"></i><br>
+                        School Supplies
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <i class="fa-solid fa-shopping-cart"></i><br>
+                        Cart
+                    </a>
+                </li>
+        
+                <!-- Profile Section -->
+                <li class="profile-section">
+                    <i class="fa-solid fa-user-circle profile-icon" id="profile-icon"></i>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <a href="transaction-history.html">Transaction History</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HERO BANNER SLIDER -->
+<section class="hero-banner">
+    <div class="slider">
+        <div class="slides">
+            <img src="/img/banner1.jpg" class="active">
+            <img src="/img/banner2.png">
+            <img src="/img/banner3.jpg">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+        
+        <!-- Circle Indicators -->
+        <div class="hero-indicators">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Categories Section -->
+<section class="categories">
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-description">Skip the long line at the campus! Baste BookMart lets you conveniently shop for books, uniforms, and school supplies online. Browse our selection and get everything you need with just a few clicks.</p>
+    
+    <div class="category-grid">
+        <!-- Books Category -->
+        <div class="category-item">
+            <img src="/img/books.jpg" alt="Books">
+            <h3 class="category-title">Books</h3>
+            <a href="books.html" class="browse-btn">BROWSE ALL</a>
+        </div>
+
+        <!-- Uniforms Category -->
+        <div class="category-item">
+            <img src="/img/uniform.jpg" alt="Uniforms">
+            <h3 class="category-title">Uniforms</h3>
+            <a href="uniforms.html" class="browse-btn">BROWSE ALL</a>
+        </div>
+
+        <!-- School Supplies Category -->
+        <div class="category-item">
+            <img src="/img/supplies.jpg" alt="School Supplies">
+            <h3 class="category-title">School Supplies</h3>
+            <a href="supplies.html" class="browse-btn">BROWSE ALL</a>
+        </div>
+    </div>
+</section>
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Baste BookMart</h3>
+            <p>Your one-stop shop for textbooks, uniforms, and school supplies. Providing students with quality materials for success.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="uniforms.html">Uniforms</a></li>
+                <li><a href="supplies.html">School Supplies</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="customer-service.html#faqs">FAQs</a></li>
+                <li><a href="customer-service.html#returns">Returns</a></li>
+                <li><a href="customer-service.html#privacy">Privacy Policy</a></li>
+                <li><a href="customer-service.html#terms">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="footer-social">
+        <a href="https://www.facebook.com/sansebastiangoldenstags" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sscrofficial/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCvQ2v5rynbcUqwZvqjq8DwA" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@sscrmanilaofficial" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Baste BookMart. All rights reserved.
+    </div>
+</footer>
+
+    <script src="/js/script.js"></script>
+    
+    <!-- Search Functionality Script -->
+    <script>
+        // Sample data with items categorized - replace with your actual items
+        const items = [
+            // Books
+            { name: "21st Century Philippine and World Literature", category: "books", url: "books.html#algebra" },
+            { name: "Basic Calculus", category: "books", url: "books.html#biology" },
+            { name: "Differential Calculus", category: "books", url: "books.html#chemistry" },
+            { name: "Discrete Mathematics", category: "books", url: "books.html#dictionary" },
+            { name: "Ethics", category: "books", url: "books.html#english" },
+            { name: "General Biology", category: "books", url: "books.html#algebra" },
+            { name: "General Chemistry", category: "books", url: "books.html#biology" },
+            { name: "General Mathematics", category: "books", url: "books.html#chemistry" },
+            { name: "General Physics", category: "books", url: "books.html#dictionary" },
+            { name: "Komunikasyon at Pananaliksik sa Wika", category: "books", url: "books.html#english" },
+            { name: "Life and Works of Rizal", category: "books", url: "books.html#filipino" },
+            { name: "Mathematics in the Modern World", category: "books", url: "books.html#history" },
+            { name: "NSTP 1", category: "books", url: "books.html#algebra" },
+            { name: "NSTP 2", category: "books", url: "books.html#biology" },
+            { name: "Oral Communication", category: "books", url: "books.html#chemistry" },
+            { name: "Physical Education 1", category: "books", url: "books.html#dictionary" },
+            { name: "Physical Education 2", category: "books", url: "books.html#english" },
+            { name: "Physical Education 3", category: "books", url: "books.html#filipino" },
+            { name: "Physical Education 4", category: "books", url: "books.html#history" },
+            { name: "Practical Research 1", category: "books", url: "books.html#algebra" },
+            { name: "Practical Research 2", category: "books", url: "books.html#biology" },
+            { name: "Pre-Calculus", category: "books", url: "books.html#chemistry" },
+            { name: "Purposive Communication", category: "books", url: "books.html#dictionary" },
+            { name: "Science, Technology & Society", category: "books", url: "books.html#english" },
+            { name: "Statistics and Probability", category: "books", url: "books.html#filipino" },
+            { name: "Understanding The Self", category: "books", url: "books.html#history" },
+            
+            // Uniforms
+            { name: "Brown Baste Cavite T-Shirt", category: "uniforms", url: "uniforms.html#athletic-shorts" },
+            { name: "Green Bravo Baste T-Shirt", category: "uniforms", url: "uniforms.html#blazer" },
+            { name: "NSTP T-Shirt", category: "uniforms", url: "uniforms.html#pe-shirt" },
+            { name: "PE Jogging Pants", category: "uniforms", url: "uniforms.html#polo" },
+            { name: "PE T-Shirt", category: "uniforms", url: "uniforms.html#skirt" },
+            { name: "Red and Gold Type A Uniform", category: "uniforms", url: "uniforms.html#slacks" },
+            { name: "Red and White Type B Uniform", category: "uniforms", url: "uniforms.html#socks" },
+            { name: "Red-Yellow and White Type B Uniform", category: "uniforms", url: "uniforms.html#tie" },
+            { name: "White and Gold Type A Uniform", category: "uniforms", url: "uniforms.html#tie" },
+            
+            // Supplies
+            { name: "Notebook", category: "supplies", url: "supplies.html#compass" },
+            { name: "Pen", category: "supplies", url: "supplies.html#ballpen" },
+            { name: "Stapler", category: "supplies", url: "supplies.html#crayons" },
+            { name: "Binder", category: "supplies", url: "supplies.html#calculator" },
+            { name: "Ruler", category: "supplies", url: "supplies.html#erasers" },
+            { name: "Folder", category: "supplies", url: "supplies.html#folder" },
+            { name: "Highlighter", category: "supplies", url: "supplies.html#highlighter" },
+            { name: "Scissors", category: "supplies", url: "supplies.html#scissors" },
+            { name: "Yellow Pad", category: "supplies", url: "supplies.html#index-cards" },
+            { name: "Correction Tape", category: "supplies", url: "supplies.html#correction-tape" },
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResults = document.getElementById('searchResults');
+
+        // Function to filter items based on search query
+        function filterItems(query) {
+            if (!query) return [];
+            
+            query = query.toLowerCase();
+            return items.filter(item => 
+                item.name.toLowerCase().includes(query) || 
+                item.category.toLowerCase().includes(query)
+            );
+        }
+
+        // Function to display search results
+        function displayResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No items found</div>';
+                searchResults.classList.add('active');
+                return;
+            }
+            
+            results.forEach(item => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                resultItem.innerHTML = `
+                    ${item.name} <span class="category">(${item.category})</span>
+                `;
+                
+                // Add click event to navigate to the item's page
+                resultItem.addEventListener('click', function() {
+                    window.location.href = item.url;
+                });
+                
+                searchResults.appendChild(resultItem);
+            });
+            
+            searchResults.classList.add('active');
+        }
+
+        // Event listener for input changes (real-time search)
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+            if (query.length > 0) {
+                const results = filterItems(query);
+                displayResults(results);
+            } else {
+                searchResults.innerHTML = '';
+                searchResults.classList.remove('active');
+            }
+        });
+
+        // Event listener for search button click
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.trim();
+            if (query.length > 0) {
+                const results = filterItems(query);
+                displayResults(results);
+            }
+        });
+
+        // Event listener for Enter key press
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.trim();
+                if (query.length > 0) {
+                    const results = filterItems(query);
+                    displayResults(results);
+                }
+            }
+        });
+
+        // Close results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchButton.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
